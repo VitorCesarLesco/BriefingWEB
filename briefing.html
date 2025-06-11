@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing para Desenvolvimento de Site</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .form-content {
+      padding: 2rem;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin: 2rem 0 1rem 0;
+      padding: 0.5rem 0;
+      border-bottom: 3px solid #3498db;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    
+    fieldset {
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      border: 2px solid #ecf0f1;
+      border-radius: 10px;
+      background: #fafbfc;
+    }
+    
+    legend {
+      font-weight: 600;
+      color: #2c3e50;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 5px;
+    }
+    
+    label {
+      display: block;
+      margin: 1rem 0;
+      font-weight: 500;
+      color: #555;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="url"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #3498db;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+      transform: translateY(-1px);
+    }
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+      margin-right: 0.8rem;
+      transform: scale(1.2);
+      accent-color: #3498db;
+    }
+    
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: background 0.2s ease;
+    }
+    
+    .checkbox-item:hover {
+      background: rgba(52, 152, 219, 0.1);
+    }
+    
+    button {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 2rem 0;
+      width: 100%;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+    }
+    
+    .required {
+      color: #e74c3c;
+    }
+    
+    .form-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      
+      .header {
+        padding: 2rem 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .form-content {
+        padding: 1rem;
+      }
+      
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Briefing de Site</h1>
+      <p class="subtitle">Questionário completo para desenvolvimento web</p>
+    </div>
+    
+    <div class="form-content">
+      <form action="https://formspree.io/f/xanjoyaa" method="POST">
+        
+        <div class="form-section">
+          <h2>1. Dados de Contato</h2>
+          <label>
+            Nome da Empresa<br>
+            <input type="text" name="nome_empresa" placeholder="Digite o nome da empresa">
+          </label>
+          <label>
+            Nome do Contato <span class="required">*</span><br>
+            <input type="text" name="nome_contato" required placeholder="Seu nome completo">
+          </label>
+          <label>
+            E-mail <span class="required">*</span><br>
+            <input type="email" name="email" required placeholder="seu@email.com">
+          </label>
+          <label>
+            Telefone <span class="required">*</span><br>
+            <input type="tel" name="telefone" required placeholder="(11) 99999-9999">
+          </label>
+          <fieldset>
+            <legend>Já possui site? <span class="required">*</span></legend>
+            <label><input type="radio" name="possui_site" value="Sim" required> Sim</label>
+            <label><input type="radio" name="possui_site" value="Não"> Não</label>
+            <label>
+              Se "Sim", URL<br>
+              <input type="url" name="url_site" placeholder="https://www.seusite.com.br">
+            </label>
+          </fieldset>
+        </div>
+        
+        <div class="form-section">
+          <h2>2. Objetivo do Projeto</h2>
+          <fieldset>
+            <legend>O que pretende fazer? <span class="required">*</span></legend>
+            <label><input type="radio" name="objetivo_projeto" value="Construir um novo site do zero" required> Construir um novo site do zero</label>
+            <label><input type="radio" name="objetivo_projeto" value="Reformular site existente"> Reformular site existente</label>
+            <label><input type="radio" name="objetivo_projeto" value="Adicionar funcionalidades"> Adicionar funcionalidades ao site atual</label>
+            <label><input type="radio" name="objetivo_projeto" value="Migrar plataforma"> Migrar para nova plataforma</label>
+            <label><input type="radio" name="objetivo_projeto" value="Criar versão mobile"> Criar versão mobile/responsiva</label>
+          </fieldset>
+          
+          <label>
+            Sobre a empresa, produto ou serviço <span class="required">*</span><br>
+            <textarea name="sobre_empresa" rows="4" required placeholder="Descreva sua empresa, principais produtos/serviços, diferenciais..."></textarea>
+          </label>
+          
+          <label>
+            Que tipo de site pretende? <span class="required">*</span><br>
+            <select name="tipo_site" required>
+              <option value="">-- selecione --</option>
+              <option value="Institucional">Institucional (empresas, escritórios, etc.)</option>
+              <option value="E-commerce">E-commerce (loja virtual)</option>
+              <option value="Portfolio">Portfolio/Galeria</option>
+              <option value="Blog">Blog/Site de conteúdo</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="Portal">Portal de notícias</option>
+              <option value="Sistema Web">Sistema/Aplicação Web</option>
+              <option value="Marketplace">Marketplace</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </label>
+        </div>
+        
+        <div class="form-section">
+          <h2>3. Identidade Visual</h2>
+          <fieldset>
+            <legend>Possui logotipo/marca? <span class="required">*</span></legend>
+            <label><input type="radio" name="identidade_visual" value="Já possuo e envio" required> Já possuo e vou enviar</label>
+            <label><input type="radio" name="identidade_visual" value="Já possuo e orçar novo"> Já possuo, mas pretendo orçar um novo</label>
+            <label><input type="radio" name="identidade_visual" value="Não possuo e orçar"> Não possuo, quero orçar junto ao site</label>
+            <label><input type="radio" name="identidade_visual" value="Não possuo e envia colaborador"> Não possuo, mas mandarei de outro colaborador</label>
+          </fieldset>
+          
+          <label>
+            Cores preferidas para o site<br>
+            <input type="text" name="cores_preferidas" placeholder="Ex: azul, branco, vermelho...">
+          </label>
+          
+          <label>
+            Estilo visual desejado<br>
+            <select name="estilo_visual">
+              <option value="">-- selecione --</option>
+              <option value="Moderno e minimalista">Moderno e minimalista</option>
+              <option value="Corporativo e sério">Corporativo e sério</option>
+              <option value="Criativo e colorido">Criativo e colorido</option>
+              <option value="Elegante e sofisticado">Elegante e sofisticado</option>
+              <option value="Jovem e dinâmico">Jovem e dinâmico</option>
+              <option value="Tradicional e conservador">Tradicional e conservador</option>
+            </select>
+          </label>
+        </div>
+        
+        <div class="form-section">
+          <h2>4. Público-Alvo e Metas</h2>
+          <label>
+            Quais são os objetivos do site? <span class="required">*</span><br>
+            <textarea name="objetivos_site" rows="3" required placeholder="Ex: gerar leads, vender produtos, divulgar serviços..."></textarea>
+          </label>
+          
+          <label>
+            Descrição do público-alvo <span class="required">*</span><br>
+            <textarea name="publico_alvo" rows="4" required placeholder="Faixa etária, localização, condição econômica, dispositivos mais usados, interesses..."></textarea>
+          </label>
+          
+          <label>
+            Principais concorrentes (URLs)<br>
+            <textarea name="concorrentes" rows="2" placeholder="Sites de empresas concorrentes que você admira ou gostaria de se diferenciar"></textarea>
+          </label>
+        </div>
+        
+        <div class="form-section">
+          <h2>5. Estrutura de Páginas</h2>
+          <fieldset>
+            <legend>Além da Homepage, quais páginas terão? <span class="required">*</span></legend>
+            <div class="checkbox-grid">
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Homepage" checked> Homepage</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Política de Privacidade"> Política de Privacidade</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Contato"> Contato</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Quem Somos"> Quem Somos</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Produtos"> Produtos</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Serviços"> Serviços</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Blog"> Blog</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Portfólio"> Portfólio</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Parceiros"> Parceiros</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Representantes"> Representantes</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Clientes"> Clientes</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Equipe"> Equipe</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Galeria de Fotos"> Galeria de Fotos</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Galeria de Vídeos"> Galeria de Vídeos</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Trabalhe Conosco"> Trabalhe Conosco</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="E-commerce"> E-commerce</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Calendário de Eventos"> Calendário de Eventos</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="paginas[]" value="Newsletter"> Newsletter</label></div>
+            </div>
+            <label>
+              Outras páginas<br>
+              <input type="text" name="paginas_outro" placeholder="Descreva outras páginas necessárias">
+            </label>
+          </fieldset>
+        </div>
+        
+        <div class="form-section">
+          <h2>6. Funcionalidades e Integrações</h2>
+          <fieldset>
+            <legend>Redes Sociais <span class="required">*</span></legend>
+            <div class="checkbox-grid">
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="Nenhuma"> Nenhuma</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="Facebook"> Facebook</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="Instagram"> Instagram</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="Twitter"> Twitter</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="LinkedIn"> LinkedIn</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="YouTube"> YouTube</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="TikTok"> TikTok</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="redes_sociais[]" value="WhatsApp"> WhatsApp Business</label></div>
+            </div>
+            <label>
+              Outras redes sociais<br>
+              <input type="text" name="redes_outro" placeholder="Especifique outras redes">
+            </label>
+          </fieldset>
+          
+          <fieldset>
+            <legend>Funcionalidades especiais</legend>
+            <div class="checkbox-grid">
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Chat online"> Chat online</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Sistema de busca"> Sistema de busca</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Formulários personalizados"> Formulários personalizados</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Área restrita"> Área restrita/Login</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Integração CRM"> Integração com CRM</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Google Analytics"> Google Analytics</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="SEO"> Otimização SEO</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="funcionalidades[]" value="Multi-idioma"> Multi-idioma</label></div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div class="form-section">
+          <h2>7. Idiomas e Localização</h2>
+          <fieldset>
+            <legend>Idiomas do site</legend>
+            <div class="checkbox-grid">
+              <div class="checkbox-item"><label><input type="checkbox" name="idiomas[]" value="Português" checked> Português</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="idiomas[]" value="Inglês"> Inglês</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="idiomas[]" value="Espanhol"> Espanhol</label></div>
+              <div class="checkbox-item"><label><input type="checkbox" name="idiomas[]" value="Francês"> Francês</label></div>
+            </div>
+            <label>
+              Outros idiomas<br>
+              <input type="text" name="outros_idiomas" placeholder="Especifique outros idiomas">
+            </label>
+          </fieldset>
+          
+          <label>
+            Região/país de atuação<br>
+            <input type="text" name="regiao_atuacao" placeholder="Ex: Brasil, América Latina, Global...">
+          </label>
+        </div>
+        
+        <div class="form-section">
+          <h2>8. Aspectos Técnicos</h2>
+          <label>
+            Prazo desejado para conclusão<br>
+            <select name="prazo">
+              <option value="">-- selecione --</option>
+              <option value="Urgente (até 2 semanas)">Urgente (até 2 semanas)</option>
+              <option value="1 mês">1 mês</option>
+              <option value="2 meses">2 meses</option>
+              <option value="3 meses">3 meses</option>
+              <option value="Mais de 3 meses">Mais de 3 meses</option>
+              <option value="Flexível">Flexível</option>
+            </select>
+          </label>
+          
+          <label>
+            Orçamento estimado<br>
+            <select name="orcamento">
+              <option value="">-- selecione --</option>
+              <option value="Até R$ 2.000">Até R$ 2.000</option>
+              <option value="R$ 2.000 - R$ 5.000">R$ 2.000 - R$ 5.000</option>
+              <option value="R$ 5.000 - R$ 10.000">R$ 5.000 - R$ 10.000</option>
+              <option value="R$ 10.000 - R$ 20.000">R$ 10.000 - R$ 20.000</option>
+              <option value="Acima de R$ 20.000">Acima de R$ 20.000</option>
+              <option value="A definir">A definir</option>
+            </select>
+          </label>
+          
+          <fieldset>
+            <legend>Hospedagem</legend>
+            <label><input type="radio" name="hospedagem" value="Já tenho"> Já tenho hospedagem</label>
+            <label><input type="radio" name="hospedagem" value="Preciso contratar"> Preciso contratar</label>
+            <label><input type="radio" name="hospedagem" value="Quero orçamento"> Quero orçamento junto</label>
+          </fieldset>
+        </div>
+        
+        <div class="form-section">
+          <h2>9. Informações Adicionais</h2>
+          <label>
+            Sites que você admira (URLs)<br>
+            <textarea name="sites_admirados" rows="3" placeholder="Compartilhe sites que considera bonitos ou funcionais"></textarea>
+          </label>
+          
+          <label>
+            Observações gerais<br>
+            <textarea name="observacoes" rows="4" placeholder="Qualquer informação adicional que considere importante"></textarea>
+          </label>
+          
+          <fieldset>
+            <legend>Como nos conheceu?</legend>
+            <label><input type="radio" name="como_conheceu" value="Google"> Google</label>
+            <label><input type="radio" name="como_conheceu" value="Redes sociais"> Redes sociais</label>
+            <label><input type="radio" name="como_conheceu" value="Indicação"> Indicação</label>
+            <label><input type="radio" name="como_conheceu" value="Site/Blog"> Site/Blog</label>
+            <label><input type="radio" name="como_conheceu" value="Outro"> Outro</label>
+          </fieldset>
+        </div>
+        
+        <button type="submit">Enviar Briefing</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
